@@ -73,11 +73,31 @@
 ### Task 4
 #Get the input from the user and return a string welcoming the user to python
 
-first_name = input("Enter your first name:\n>")
-last_name = input("Enter your last name:\n>")
+# first_name = input("Enter your first name:\n>")
+# last_name = input("Enter your last name:\n>")
 
 
-print(f"Hello {first_name} {last_name}! You just delved into python.")
+# print(f"Hello {first_name} {last_name}! You just delved into python.")
 
 
 #### DATA STRUCTURES #### 
+new_list = ['this', "brown", 55, "oxen", True, 0.85]
+# print(new_list[1])
+# print(new_list[1:4:2])
+
+# new_list[0] = 59
+
+# print(new_list)
+
+second_list = ['yam', "egg", "fish"]
+
+
+print(new_list + second_list)
+
+
+list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
+
+first_num = list1[2][2][1]
+second_num = list1[2][1]
+
+print(first_num+second_num)
