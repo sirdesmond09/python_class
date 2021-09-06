@@ -51,27 +51,41 @@ print('Welcome to this game!')
 aList = ['Goat', 'John', 'School', 'Django', 'Bread', 'Meat', 'Chicken']
 print(f"Guess a word from the list below:\n{aList}")
 
-user_input = input("Enter your word\n>")
 
-print('Please wait...')
+score = 0
+chances = 3
 
-time.sleep(10)
+while chances >0:
+    user_input = input("Enter your word\n>")
 
-print("....shuffling...")
-random.shuffle(aList)
+    print('Please wait...')
 
-choice = random.choice(aList)
+    time.sleep(2)
+    if user_input in aList:
+        print("....shuffling...")
+        random.shuffle(aList)
 
-time.sleep(1)
-print(3)
-time.sleep(2)
-print(2)
-time.sleep(2)
-print(1)
-time.sleep(2)
-if choice.lower() == user_input.lower():
-    print('You win')
-else:
-    print('Try again next time')
+        choice = random.choice(aList)
+
+        time.sleep(1)
+        print(3)
+        time.sleep(1)
+        print(2)
+        time.sleep(1)
+        print(1)
+        time.sleep(1)
+        if choice.lower() == user_input.lower():
+            chances +=1
+            score +=2
+            
+            print("Correct")
+            print(f"You have {chances} lives left\n")
+        else:
+            chances -=1
+            
+            print("Wrong")
+            print(f"You have {chances} lives left\n")
+    else:
+        print(f"Invalid entry.\nChoose from {aList}")
     
-print(f'Computer choice is {choice}')
+print(f'Your final score is {score}')
